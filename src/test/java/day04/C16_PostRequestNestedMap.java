@@ -3,14 +3,14 @@ package day04;
 import baseUrls.BookerBaseUrl;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import test_data.BookerTestData;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
 
-public class C16_PostRequestNestedMapTestData extends BookerBaseUrl {
+public class C16_PostRequestNestedMap extends BookerBaseUrl {
 /*
     Given
         1) https://restful-booker.herokuapp.com/booking
@@ -51,11 +51,20 @@ public class C16_PostRequestNestedMapTestData extends BookerBaseUrl {
 
         //Set the expected data
         //First we need to prepare inner json as map
-        Map<String, String > bookingdatesMap = BookerTestData.bookingdatesMethod("2023-03-07", "2024-09-25");
-        System.out.println("bookingdatesMap = " + bookingdatesMap);
+        Map<String, String > bookingdatesMap = new HashMap<>();//To prepare the test data here is not recommended. We will prepare a test data method for this.
+        bookingdatesMap.put("checkin", "2023-03-07");
+        bookingdatesMap.put("checkout","2024-09-25");
+        //System.out.println("bookingdatesMap = " + bookingdatesMap);
 
         //Now we prepare outer map
-        Map<String, Object > expectedData = BookerTestData.expectedDataMethod("John","Doe",471,true, bookingdatesMap, "Lunch");
+        Map<String, Object > expectedData = new HashMap<>();
+        expectedData.put("firstname","John");
+        expectedData.put("lastname","Doe");
+        expectedData.put("totalprice",15);
+        expectedData.put("depositpaid",true);
+        expectedData.put("bookingdates", bookingdatesMap);
+        expectedData.put("additionalneeds", "Lunch");
+
         System.out.println("expectedData = " + expectedData);
 
         //Send the request and get the response
