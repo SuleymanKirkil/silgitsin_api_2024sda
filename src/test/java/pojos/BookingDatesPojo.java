@@ -1,7 +1,6 @@
 package pojos;
 
 public class BookingDatesPojo {
-
     private String checkin;
     private String checkout;
 

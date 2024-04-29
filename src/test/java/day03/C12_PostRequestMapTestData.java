@@ -41,7 +41,7 @@ public class C12_PostRequestMapTestData extends JsonPlaceHolderBaseUrl {
         spec.pathParams("first", "todos");
 
         //Set the expected data(Payload) --> Prepare it as Map
-        Map<String, Object> expectedData = JsonPlaceHolderTestData.jsonPlaceHolderMapper(55,"Tidy your room", false);
+        Map<String, Object> expectedData = JsonPlaceHolderTestData.expectedDataMap(55,"Tidy your room", false);
 
         System.out.println("expectedData = " + expectedData);
 

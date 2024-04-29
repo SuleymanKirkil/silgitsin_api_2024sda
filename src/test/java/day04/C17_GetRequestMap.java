@@ -1,6 +1,6 @@
 package day04;
 
-import base_urls.BookerBaseUrl;
+import baseUrls.BookerBaseUrl;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 import test_data.BookerTestData;
