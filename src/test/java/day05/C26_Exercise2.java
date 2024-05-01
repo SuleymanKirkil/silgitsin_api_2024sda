@@ -1,6 +1,5 @@
 package day05;
 
-import baseUrls.DummyRestBaseUrl;
 import baseUrls.GorestBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

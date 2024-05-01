@@ -1,19 +1,18 @@
-package day05;
+package day06;
 
 import baseUrls.DummyRestBaseUrl;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import static io.restassured.RestAssured.given;
-import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
+import static org.junit.Assert.assertEquals;
 
-public class C26_Exercise extends DummyRestBaseUrl {
+public class C28_RevisionExercise03 extends DummyRestBaseUrl {
     /*
     Given
         https://dummy.restapiexample.com/api/v1/employees
@@ -80,4 +79,5 @@ public class C26_Exercise extends DummyRestBaseUrl {
         assertEquals("6644770",sumOfSalary+"");
 
     }
+
 }
